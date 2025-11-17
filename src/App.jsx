@@ -1,26 +1,33 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Features from './components/Features'
+import Showcase from './components/Showcase'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen w-full bg-black text-white font-[var(--font-manrope)]">
+      <Navbar />
+      <Hero />
+      <Features />
+      <Showcase />
+      <footer id="get-started" className="bg-black border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold">Build your symbiotic future</h3>
+              <p className="mt-2 text-white/70">Start exploring the canvas of collaboration today.</p>
+            </div>
+            <form className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3">
+              <input type="email" required placeholder="Enter your email"
+                className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" />
+              <button className="rounded-xl bg-gradient-to-r from-fuchsia-500 via-purple-500 to-indigo-500 px-6 py-3 font-semibold text-white shadow-lg shadow-fuchsia-500/30 hover:opacity-90 transition">
+                Request Access
+              </button>
+            </form>
+          </div>
+          <p className="mt-10 text-xs text-white/50">© {new Date().getFullYear()} Symbio. All rights reserved.</p>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
